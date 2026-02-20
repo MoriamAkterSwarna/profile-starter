@@ -1,12 +1,14 @@
 import { BadgeCheck, Grid3X3, Heart, MessageCircle } from "lucide-react";
+import { forwardRef } from "react";
 
 
-const ProfilePreview = ({ profile }) => {
+const ProfilePreview = forwardRef(({ profile }, ref) => {
   const gradient =
     "linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%)";
 
   return (
     <div
+      ref={ref}
       className="max-w-lg w-full mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/10"
       style={{ background: gradient, minHeight: 250 }}
     >
@@ -119,6 +121,6 @@ const ProfilePreview = ({ profile }) => {
       </div>
     </div>
   );
-};
+})
 
 export default ProfilePreview;
