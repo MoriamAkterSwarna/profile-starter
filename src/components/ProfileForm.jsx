@@ -1,10 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Camera, User, BadgeCheck } from "lucide-react";
 
 
 
 const BIO_MAX = 150;
 
-const gradientOptions = [
+export const gradientOptions = [
   { value: "instagram", label: "Instagram", colors: "from-yellow-400 via-pink-500 to-purple-600" },
   { value: "sunset", label: "Sunset", colors: "from-orange-400 via-rose-500 to-purple-600" },
   { value: "ocean", label: "Ocean", colors: "from-cyan-400 via-blue-500 to-indigo-500" },
@@ -164,24 +165,7 @@ const ProfileForm = ({ profile, onChange }) => {
         </div>
       </div>
 
-      {/* Gradient Selector */}
-      <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-700">Background Gradient</label>
-        <div className="flex gap-2">
-          {gradientOptions.map((g) => (
-            <button
-              key={g.value}
-              onClick={() => onChange({ gradient: g.value })}
-              title={g.label}
-              className={`flex-1 h-10 rounded-lg bg-linear-to-r ${g.colors} transition-all ${
-                profile.gradient === g.value
-                  ? "ring-2 ring-blue-500 ring-offset-2 scale-105"
-                  : "opacity-60 hover:opacity-100"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
+    
     </div>
   );
 };
