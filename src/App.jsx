@@ -45,7 +45,7 @@ const App = () => {
           {/* Preview Side */}
           <div className="w-full lg:w-1/2 flex justify-center lg:sticky lg:top-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             <FlipCard ref={cardRef} profile={profile} /> 
-            <ProfilePreview profile={profile} />
+            {/* <ProfilePreview profile={profile} /> */}
           </div>
         </div>
       </main>

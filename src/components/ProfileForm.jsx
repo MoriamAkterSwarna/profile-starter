@@ -33,9 +33,9 @@ const ProfileForm = ({ profile, onChange }) => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       {/* Profile Image Upload */}
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-1.5">
         <label htmlFor="profile-upload" className="relative cursor-pointer group">
           <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden border-2 border-gray-200 transition-all group-hover:border-blue-500">
             {profile.profileImage ? (
@@ -53,7 +53,7 @@ const ProfileForm = ({ profile, onChange }) => {
       </div>
 
       {/* Username */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label htmlFor="username" className="block text-sm font-medium text-gray-700">
           Username
         </label>
@@ -71,7 +71,7 @@ const ProfileForm = ({ profile, onChange }) => {
       </div>
 
       {/* Display Name */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label htmlFor="displayName" className="block text-sm font-medium text-gray-700">
           Display Name
         </label>
@@ -86,7 +86,7 @@ const ProfileForm = ({ profile, onChange }) => {
       </div>
 
       {/* Bio */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <label htmlFor="bio" className="block text-sm font-medium text-gray-700">
             Bio
@@ -131,7 +131,7 @@ const ProfileForm = ({ profile, onChange }) => {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-2">
         {(["posts", "followers", "following"] ).map((stat) => (
           <div key={stat} className="space-y-1">
             <label className="block text-xs font-medium text-gray-600 capitalize">{stat}</label>
@@ -146,7 +146,7 @@ const ProfileForm = ({ profile, onChange }) => {
       </div>
 
       {/* Theme Presets */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label className="block text-sm font-medium text-gray-700">Theme Preset</label>
         <div className="flex gap-2">
           {themeOptions.map((t) => (
