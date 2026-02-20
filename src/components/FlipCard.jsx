@@ -37,7 +37,7 @@ const FlipCard = forwardRef(function FlipCard(props, ref) {
               transform: "rotateY(180deg)",
             }}
           >
-            <QrSection profile={profile} />
+            <QrSection  profile={profile} />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import DarkModeToggle from "./components/DarkModeToggle";
 import ProfileForm from "./components/ProfileForm";
 import FlipCard from "./components/FlipCard";
 import ExportButton from "./components/ExportButton";
+import QrSection from "./components/QrSection";
 import Header from "./components/Header";
 import ProfilePreview from "./components/ProfilePreview";
 
@@ -12,12 +13,15 @@ const App = () => {
     profileImage: "",
     username: "yourhandle",
     posts: 256,
-    followers: 1234,
-    following: 567,
+    followers: 1024,
+    following: 512,
     isVerified: false,
     gradient: "instagram",
   });
   const cardRef = useRef(null);
+  const frontRef = useRef(null);
+  const backRef = useRef(null);
+
 
   const handleChange = (updates) => {
     setProfile((prev) => ({ ...prev, ...updates }));
@@ -37,8 +41,14 @@ const App = () => {
           <div className="w-full lg:w-1/2 bg-card rounded-2xl border border-border p-6 shadow-sm animate-fade-in">
             <h2 className="text-lg font-semibold text-foreground mb-5">Profile Details</h2>
             <ProfileForm profile={profile} onChange={handleChange} />
-            <div className="mt-6">
-              <ExportButton cardRef={cardRef} username={profile.username} />
+            <div className="mt-6 flex flex-col gap-2">
+              {/* Hidden DOMs for clean export */}
+              <div style={{ display: "none" }}>
+                <ProfilePreview ref={frontRef} profile={profile} />
+                <QrSection ref={backRef} profile={profile} />
+              </div>
+              <ExportButton cardRef={frontRef} username={profile.username} />
+              <ExportButton cardRef={backRef} username={profile.username} />
             </div>
           </div>
 

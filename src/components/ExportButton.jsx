@@ -38,6 +38,7 @@ const ExportButton = ({ cardRef, username }) => {
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  
   /* ── PNG Export ── */
   const handleExport = async () => {
     if (!cardRef.current || !username) return;
@@ -118,7 +119,7 @@ const ExportButton = ({ cardRef, username }) => {
           ) : (
             <>
               <Download size={16} />
-              Download PNG
+              Download {}
             </>
           )}
         </button>
